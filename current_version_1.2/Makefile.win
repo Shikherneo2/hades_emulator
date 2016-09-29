@@ -1,0 +1,33 @@
+# Project: Wina
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = Wina_private.res
+OBJ  = main_wina.o $(RES)
+LINKOBJ  = main_wina.o $(RES)
+LIBS =  -L"E:/Program_Files/DevCpp/lib" -mwindows ../../lib/libcomctl32.a ../../lib/libwinmm.a  
+INCS =  -I"E:/Program_Files/DevCpp/include" 
+CXXINCS =  -I"E:/Program_Files/DevCpp/lib/gcc/mingw32/3.4.2/include"  -I"E:/Program_Files/DevCpp/include/c++/3.4.2/backward"  -I"E:/Program_Files/DevCpp/include/c++/3.4.2/mingw32"  -I"E:/Program_Files/DevCpp/include/c++/3.4.2"  -I"E:/Program_Files/DevCpp/include" 
+BIN  = Wina.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Wina.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "Wina.exe" $(LIBS)
+
+main_wina.o: main_wina.cpp
+	$(CPP) -c main_wina.cpp -o main_wina.o $(CXXFLAGS)
+
+Wina_private.res: Wina_private.rc test_rc.rc help.rc 
+	$(WINDRES) -i Wina_private.rc --input-format=rc -o Wina_private.res -O coff 
