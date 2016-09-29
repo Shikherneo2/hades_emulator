@@ -1,5 +1,7 @@
+
 Hades is an input emulator.
-It maps your Gamepad controls to your keyborad/mouse. This means that you can use your Gamepads to play games that dont support them. Try playing Mario with an xBox controller. Its crazy fun.
+
+It maps your Gamepad controls to your keyboard/mouse. This means that you can use your Gamepads to play games that dont support them. Try playing Mario with an xBox controller. Its crazy fun.
 
 The main screen shows two tabs, where you can manually map what keys to map to what controls.
 
